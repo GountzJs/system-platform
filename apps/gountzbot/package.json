@@ -1,0 +1,14 @@
+{
+  "name": "@system-platform/gountzbot",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@libsql/client": "0.15.15",
+    "tmi.js": "1.8.5",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/tmi.js": "^1.8.6",
+    "@types/uuid": "^10.0.0"
+  }
+}

@@ -1,5 +1,9 @@
 # Add files here to ignore them from prettier formatting
-/dist
+**/dist
+**/node_modules
+*.md
 /coverage
 /.nx/cache
 /.nx/workspace-data
+*-lock.yaml
+temp
