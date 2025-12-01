@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/web-coleccionables-e2e"
+    },
+    {
+      "path": "./apps/web-coleccionables"
+    },
+    {
+      "path": "./apps/overlay-notifications-e2e"
+    },
+    {
+      "path": "./apps/overlay-notifications"
+    },
+    {
+      "path": "./apps/gountzjs-bot-e2e"
+    },
+    {
+      "path": "./apps/gountzjs-bot"
+    }
+  ]
+}

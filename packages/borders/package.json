@@ -1,0 +1,13 @@
+{
+  "name": "borders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "peerDependencies": {
+    "typescript": "~5.9.2"
+  },
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.22.0"
+}

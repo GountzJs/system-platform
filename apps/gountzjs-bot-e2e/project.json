@@ -1,0 +1,24 @@
+{
+  "name": "gountzjs-bot-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "implicitDependencies": [
+    "gountzjs-bot"
+  ],
+  "targets": {
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{e2eProjectRoot}"
+      ],
+      "options": {
+        "jestConfig": "apps/gountzjs-bot-e2e/jest.config.cts",
+        "passWithNoTests": true
+      },
+      "dependsOn": [
+        "gountzjs-bot:build",
+        "gountzjs-bot:serve"
+      ]
+    }
+  }
+}
