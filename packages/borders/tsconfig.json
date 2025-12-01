@@ -1,12 +1,15 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["node"],
-    "sourceMap": true,
-    "declaration": true,
-    "noUncheckedIndexedAccess": true,
+    "lib": ["DOM", "ES2022", "DOM.Iterable"],
+    "esModuleInterop": true,
     "jsx": "react-jsx",
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-  }
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "moduleDetection": "force"
+  },
+  "include": ["src/**/*.ts", "src/*.ts"]
 }

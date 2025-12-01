@@ -2,12 +2,28 @@
   "name": "borders",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "keywords": [],
   "peerDependencies": {
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.22.0"
+  "packageManager": "pnpm@10.22.0",
+  "devDependencies": {
+    "tsup": "^8.5.1"
+  }
 }

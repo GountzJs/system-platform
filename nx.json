@@ -1,10 +1,27 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "sync": {
+    "applyChanges": false
+  },
+  "targetDefaults": {
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "serve": {
+      "dependsOn": ["^build"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "@nx/esbuild:esbuild": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
@@ -75,24 +92,8 @@
         "watchDepsTargetName": "watch-deps",
         "serveStaticTargetName": "serve-static"
       }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      },
-      "exclude": [
-        "apps/gountzjs-bot-e2e/**/*"
-      ]
     }
   ],
-  "targetDefaults": {
-    "test": {
-      "dependsOn": [
-        "^build"
-      ]
-    }
-  },
   "generators": {
     "@nx/react": {
       "application": {
