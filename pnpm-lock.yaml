@@ -219,6 +219,9 @@ importers:
       '@libsql/client':
         specifier: 0.15.15
         version: 0.15.15
+      axios:
+        specifier: ^1.13.2
+        version: 1.13.2
       tmi.js:
         specifier: 1.8.5
         version: 1.8.5(encoding@0.1.13)

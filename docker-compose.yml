@@ -1,0 +1,7 @@
+services:
+  gountzbot:
+    build:
+      context: .
+      dockerfile: ./docker/gountzbot-app.dockerfile
+    env_file: ./.env
+    restart: unless-stopped

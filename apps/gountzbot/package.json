@@ -2,8 +2,12 @@
   "name": "@system-platform/gountzbot",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "node ./dist/main.js"
+  },
   "dependencies": {
     "@libsql/client": "0.15.15",
+    "axios": "^1.13.2",
     "tmi.js": "1.8.5",
     "uuid": "^11.1.0"
   },

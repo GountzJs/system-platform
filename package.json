@@ -6,6 +6,7 @@
     "web:serve": "nx serve web-coleccionables",
     "bot:serve": "nx serve gountzbot",
     "bot:build": "nx build gountzbot",
+    "bot:start": "nx run gountzbot:serve",
     "format": "prettier . --write"
   },
   "private": true,

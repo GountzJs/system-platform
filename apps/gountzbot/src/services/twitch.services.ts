@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { twitchApiUrl, twitchClientId, twitchToken } from '../core/settings';
 
 export class TwitchServices {
@@ -8,15 +9,17 @@ export class TwitchServices {
       Authorization: `Bearer ${twitchToken}`,
       'Client-ID': twitchClientId,
     };
-    const res = await fetch(`${this.baseUrl}/helix/users?login=${username}`, {
+
+    const res = await axios({
+      method: 'get',
+      url: `${this.baseUrl}/helix/users?login=${username}`,
       headers,
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const data = (await res.json()) as any;
+    const { data } = res.data;
 
-    if (!res.ok) throw new Error('User not found');
+    if (!data.length) throw new Error('User not found');
 
-    return data.data[0].id;
+    return data[0];
   }
 }

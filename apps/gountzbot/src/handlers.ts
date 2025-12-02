@@ -226,7 +226,6 @@ export const handlerOnMessage = (client: TmiClient) => {
     if ((user.isCreator || user.isMod) && msg.startsWith('!agregar-borde ')) {
       const [_, idBorder] = msg.split('!agregar-borde ');
       rewardsState.idBorder = idBorder;
-      console.log(rewardsState.idBorder);
       client.say(`#${twitchBotUsername}`, `🤖 Borde especial agregado!`);
       return;
     }
