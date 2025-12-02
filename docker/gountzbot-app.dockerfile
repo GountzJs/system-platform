@@ -2,12 +2,13 @@ FROM node:24.11.1 AS base
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml nx.json ./
+COPY . .
 
 RUN npm install -g pnpm
-RUN corepack enable && pnpm install -r --frozen-lockfile
 
-COPY . .
+RUN corepack enable
+
+RUN pnpm install
 
 RUN pnpm bot:build
 
